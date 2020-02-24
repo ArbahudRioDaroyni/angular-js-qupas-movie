@@ -1,0 +1,45 @@
+<div class="footer-wrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-6">
+        <h3>ABOUT Qupas Movie</h3>
+        <div class="footer-logo"><img src="http://localhost/qupas-movie/assets/img/qupas.jpg" width="88" height="32" alt=""></div>
+        <p>Integer ac lorem sit amet est rhoncus dapi bus don cad pede acus morbi elit nunc molestie at ultrices eu eleifen lorem ut dictum erat masa... <a translate="readMore" href="about-us.html">Read More</a></p>
+
+        <div ng-controller="TranslateController">
+	        <a translate="changeLanguage" class="dropdown-toggle btn btn-sm btn-outline-light" href="javascript:void(0)" id="enDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+			    <div class="dropdown-menu" aria-labelledby="Dropdown">
+			    	<button ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN" class="dropdown-item"></button>
+				    <button ng-click="changeLanguage('id')" translate="BUTTON_LANG_ID" class="dropdown-item"></button>
+			    </div>
+		    </div>
+      </div>
+      <div class="col-md-2 col-sm-6">
+        <h3 translate="quickLinks"></h3>
+        <ul ng-controller="listController" class="footer-links">
+          <li ng-repeat="x in menus"><a href="#/{{x}}">{{x}}</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <h3 translate="categories"></h3>
+        <ul ng-controller="listController" class="footer-category">
+          <li ng-repeat="x in genres"><a href="#.">{{x}}</a></li>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <h3 translate="contactUs"></h3>
+        <div class="address">
+        	<a href="#."><i class="fas fa-map-pin" aria-hidden="true"></i>  Lorem # 38, Ispum Hill, Lorem, WA 12345</a>
+        </div>
+        <div class="info">
+        	<a href="#."><i class="fas fa-phone" aria-hidden="true"></i> (777) 123 4567</a>
+        </div>
+        <div class="info">
+        	<a href="#."><i class="fas fa-fax" aria-hidden="true"></i> (123) 456 7890</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">Copyright © 2017 Qupas Movie - All Rights Reserved.</div>
+  </div>
+</div>

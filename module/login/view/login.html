@@ -1,0 +1,26 @@
+<link href="assets/style/login.css" rel="stylesheet">
+<main role="main" class="text-center">
+	<form ng-submit="formSubmit()" class="form-signin">
+		<img class="mb-4" src="assets/img/qupas.jpg" alt="" width="176" height="72">
+		<p class="h3 mb-3 font-weight-normal">Sign In for search movie </p>
+
+		<label for="inputusername class="sr-only">Username</label>
+		<input type="text" class="form-control" ng-model="username" placeholder="username" autofocus>
+
+		<label for="inputPassword" class="sr-only">Password</label>
+		<input type="password" class="form-control" ng-model="password" placeholder="password">
+
+		<div class="checkbox mb-3">
+	    <label>
+	      <input type="checkbox" value="remember-me"> Remember me
+	    </label>
+	  </div>
+
+		<div class="form-group">
+			<button type="submit" class="btn btn-success">Login</button>
+		</div>
+		
+		<span class="text-danger" style="color:red">{{ error }}</span>
+
+	</form>
+</main>

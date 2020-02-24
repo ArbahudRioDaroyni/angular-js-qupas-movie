@@ -1,0 +1,47 @@
+<link href="assets/style/blog.css" rel="stylesheet">
+<div class="container-fluid bg-dark m-0">
+	<header class="blog-header py-2">
+		<div class="row flex-nowrap justify-content-between align-items-center">
+		  <div class="col-4">
+		    <a class="btn btn-sm btn-outline-warning" href="#"><i class="fas fa-bell"></i> <span translate="BUTTON_SUBSCRIBE"></span></a>
+		  </div>
+		  <div class="col-4 text-center">
+		    <img src="http://localhost/qupas-movie/assets/img/qupas.jpg" width="80" height="32" alt="">
+		  </div>
+		  <div class="col-4 d-flex justify-content-end align-items-center">
+		    <a class="btn btn-sm btn-outline-light" href="#!/login"><i class="fas fa-sign-out-alt"></i> <span translate="BUTTON_SIGN_OUT"></span></a>
+		    <!-- <form class="form-inline my-2 my-lg-0">
+		      <input class="form-control mr-sm-2" type="search" placeholder="Search movie ..." aria-label="Search">
+		      <button class="btn btn-sm btn-outline-secondary my-2 my-sm-0 mr-2" type="submit">
+		      	<i class="fas fa-search"></i>
+		      </button>
+		    </form> -->
+		  </div>
+		</div>
+	</header>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark m-1 p-1 pt-2 pb-2">
+	  <a class="navbar-brand" href="#!/home">Qupas <small class="text-tiny">Movie</small></a>
+	  <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul ng-controller="listController" class="navbar-nav mr-auto">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#!/home">Home <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li ng-repeat="x in menus" class="nav-item active">
+	        <a class="nav-link" href="#!/{{x | lowercase}}">{{x}}</a>
+	      </li>
+	    </ul>
+	    <div class="form-inline my-2 my-lg-0">
+	      <input ng-model="searchQuery" type="text" name="searchQuery" class="form-control mr-sm-2" placeholder="Search">
+	      <a translate="BUTTON_SEARCH" href=#!/search/?q={{searchQuery}} class="btn btn-outline-success my-2 my-sm-0"></a>
+	    </div>
+	  </div>
+	</nav>
+	<div class="nav-scroller border-top-light mb-2">
+		<nav ng-controller="listController" class="nav d-flex justify-content-between">
+			<a ng-repeat="x in genres" class="p-2 text-light" href="#">{{x}}</a>
+		</nav>
+  </div>
+</div>

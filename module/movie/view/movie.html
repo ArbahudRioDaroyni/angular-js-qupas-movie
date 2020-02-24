@@ -1,0 +1,63 @@
+<ng-include
+  src="'module/nav/view/nav.html'">
+</ng-include>
+
+<!-- Page Content -->
+<main role="main" class="container mt-4">
+  <!-- Item Row -->
+  <div class="row">
+    <div class="col-md-9 mb-1">
+    	
+    	<div class="card mb-3">
+			  <div class="row no-gutters">
+			    <div class="col-md-5">
+			      <img class="card-img" src="http://localhost/qupas-movie/assets/img/spinner.gif" lazy-img={{movie.Poster}} ng-if="true" alt="" style="height: 100%">
+			    </div>
+			    <div class="col-md-7">
+			      <div class="card-body">
+			      	<h3 class="card-title">{{movie.Title}}</h3>
+				      <p class="card-text">{{movie.Plot}}</p>
+				      <p class="card-text"><strong>Actors: </strong><span>{{movie.Actors}}</span></p>
+				      <p class="card-text"><strong>Genre: </strong><a href="#" ng-repeat="x in genre" class="badge badge-primary mr-1">{{x}}</a></p>
+				      <p class="card-text"><strong>Duration: </strong>{{movie.Runtime}}</p>
+				      <p class="card-text"><strong>Released: </strong>{{movie.Released}}</p>
+				      <p class="card-text"><strong>Year: </strong>{{movie.Year}}</p>
+
+							<div class="btn-group btn-group-sm btn-group-toggle mt-3" align="center" data-toggle="buttons">
+							  <label class="btn btn-outline-danger">
+							    <input ng-focus="favorite()" type="radio" name="favorite" id="favorite"><i class="fas fa-heart stroke-transparent"></i> Favorite
+							  </label>
+							  <label class="btn btn-outline-info">
+							    <input type="radio" name="options" id="option2"><i class="fas fa-play stroke-transparent"></i> Trailer
+							  </label>
+							  <label class="btn btn-outline-secondary">
+							    <input type="radio" name="options" id="option3"> Radio
+							  </label>
+							</div>
+
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+    </div>
+  </div>
+  <!-- /.row -->
+  <!-- Related Movies -->
+  <h3 class="my-4">Related Movies</h3>
+  <div class="row">
+    <div ng-repeat="x in movies | orderBy:Year | limitTo:6" class="col-md-2 col-sm-6 mb-3">
+      <a href="#!/movie/?t={{x.imdbID}}">
+      	<div class="card">
+      		<img class="card-img" src="http://localhost/qupas-movie/assets/img/spinner.gif" lazy-img="{{x.Poster}}" alt="">
+      	</div>
+	  	</a>
+    </div>
+  </div>
+  <!-- /.row -->
+</main>
+<!-- /.container -->
+
+<ng-include
+  src="'module/footer/view/footer.html'">
+</ng-include>
