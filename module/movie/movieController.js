@@ -16,23 +16,20 @@ app.controller('MovieController', function($scope, $http, $routeParams, $cookies
 	})
 
 	$scope.favorite = function() {
-		item = JSON.parse(localStorage.getItem('favorite'));
-		let user = {
-			name: 'qupas',
-			favorite: [
-				$routeParams.t
-			]
-		}
+		// item = JSON.parse(localStorage.getItem('favorite'));
+		// let user = {
+		// 	name: 'qupas',
+		// 	favorite: [
+		// 		$routeParams.t
+		// 	]
+		// }
 		if (item === null) {
-			localStorage.setItem('favorite', JSON.stringify(user));
-			alert('message?: DOMString')
+			// localStorage.setItem('favorite', JSON.stringify(user));
+			// alert('message?: DOMString')
 		} else {
-			item.favorite.push($routeParams.t);
-			localStorage.setItem('favorite', JSON.stringify(item));
-			alert('p')
+			// item.favorite.push($routeParams.t);
+			// localStorage.setItem('favorite', JSON.stringify(item));
+			// alert('p')
 		}
-		console.log(item);
 	}
-	console.log(item);
-
 });
